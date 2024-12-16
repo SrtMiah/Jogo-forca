@@ -1,0 +1,22 @@
+< !DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Jogo da Forca</title>
+   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+   <h1>Jogo da Forca</h1>
+   <div>
+       <p>{{ palavra }}</p>
+       <p>Letras erradas: {{ letras_erradas }}</p>
+       <p>Tentativas restantes: {{ tentativas }}</p>
+   </div>
+   <form method="post">
+       <input type="text" name="letra" maxlength="1" required>
+       <button type="submit">Enviar</button>
+   </form>
+   <a href="{{ url_for('novo_jogo') }}">Novo Jogo</a>
+</body>
+</html>
